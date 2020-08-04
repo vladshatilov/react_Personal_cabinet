@@ -1,6 +1,7 @@
 import React from 'react';
 import {List, Datagrid, TextField, EmailField, UrlField, Filter, TextInput, ReferenceInput, SelectInput,Edit, SimpleForm,Create,useRefresh,useRedirect} from 'react-admin';
 
+		//Adding search option
 const SearchField = (props) => (
 		<Filter {...props}>
 			<TextInput label="Search" source='q' alwaysOn />
@@ -11,7 +12,7 @@ const SearchField = (props) => (
 		</Filter>
 	);
 
-
+		//Initialise contact list
 export const UserList = props => (
 		<List filters={<SearchField />} {...props}>
 			<Datagrid rowClick='edit'>
@@ -26,7 +27,8 @@ export const UserList = props => (
 	</Datagrid>
 		</List>
 	)
-
+		
+		//Editing user list
 export const UserEdit = props => (
 		<Edit {...props}>
 			<SimpleForm>
@@ -42,7 +44,7 @@ export const UserEdit = props => (
 		</Edit>
 	)
 
-
+		//Adding user  and redirecting to the to list
 export const UserCreate = props => {
 
 	const refresh = useRefresh();
